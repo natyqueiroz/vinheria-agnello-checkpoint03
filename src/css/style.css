@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: #f8f3ee;
+    color: #2b1a1a;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho */
+
+.topo {
+    background: linear-gradient(135deg, #5c1a2b, #8b2e45);
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 16px;
+}
+
+.topo h1 {
+    letter-spacing: 2px;
+}
+
+.subtitulo {
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Conteúdo */
+.conteudo {
+    flex: 1;
+    width: 100%;
+    max-width: 760px;
+    margin: 32px auto;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 10px;
+    border-left: 5px solid #5c1a2b;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+    color: #5c1a2b;
+    margin-bottom: 10px;
+}
+
+.lista {
+    padding-left: 20px;
+}
+
+.lista li {
+    margin-bottom: 6px;
+}
+
+
+.destaque {
+    background-color: #5c1a2b;
+    color: #ffffff;
+}
+
+.destaque h2 {
+    color: #ffffff;
+}
+
+/* Rodapé */
+.rodape {
+    text-align: center;
+    padding: 20px 16px;
+    background-color: #2b1a1a;
+    color: #f8f3ee;
+    font-size: 0.9rem;
+}
