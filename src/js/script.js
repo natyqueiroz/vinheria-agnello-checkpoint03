@@ -88,4 +88,4 @@ console.log("📦 Estoque total:", estoqueTotal());
 
 console.log("🔠 Nomes em caixa alta:", nomesEmCaixaAlta());
 
-alert(`Estoque total: ${estoqueTotal()} garrafas. Veja o resto no console (F12).`);
+alert(`Estoque total: ${estoqueTotal()}`);
