@@ -1,20 +1,30 @@
 const vinhos = [];
-
+let cancelado = false;
 
 function textoDecadastro(mensagem) {
+    if (cancelado) {
+        return "";
+    }
+
     let texto = prompt(mensagem);
 
-    while (texto === null || texto.trim() === "") {
+    while (texto !== null && texto.trim() === "") {
         alert("Entrada inválida: digite algo.");
         texto = prompt(mensagem);
     }
+
+    if (texto === null) {
+        cancelado = true;
+        return "";
+    }
+
     return texto.trim();
 }
 
 function numeroDeCadastro(mensagem) {
     let numero = parseInt(textoDecadastro(mensagem));
 
-    while (isNaN(numero)) {
+    while (isNaN(numero) && !cancelado) {
         alert("Digite apenas números.");
         numero = parseInt(textoDecadastro(mensagem));
     }
@@ -25,7 +35,7 @@ function tipoDeCadastro() {
     const tiposValidos = ["tinto", "branco", "rose", "rosé"];
     let tipo = textoDecadastro("Tipo (tinto, branco ou rosé):").toLowerCase();
 
-    while (!tiposValidos.includes(tipo)) {
+    while (!tiposValidos.includes(tipo) && !cancelado) {
         alert("Tipo inválido! Digite tinto, branco ou rosé.");
         tipo = textoDecadastro("Tipo (tinto, branco ou rosé):").toLowerCase();
     }
@@ -42,7 +52,9 @@ function cadastrarVinho() {
     const safra = numeroDeCadastro("Safra:");
     const estoque = numeroDeCadastro("Estoque:");
 
-    adicionarVinho(nome, tipo, safra, estoque);
+    if (!cancelado) {
+        adicionarVinho(nome, tipo, safra, estoque);
+    }
 }
 
 function listarVinhos() {
@@ -65,7 +77,7 @@ function nomesEmCaixaAlta() {
 
 do {
     cadastrarVinho();
-} while (confirm("Deseja cadastrar outro vinho?"));
+} while (!cancelado && confirm("Deseja cadastrar outro vinho?"));
 
 console.log("🍷 Lista completa:");
 listarVinhos();
@@ -76,4 +88,4 @@ console.log("📦 Estoque total:", estoqueTotal());
 
 console.log("🔠 Nomes em caixa alta:", nomesEmCaixaAlta());
 
-alert(`Estoque total: ${estoqueTotal()}`);
+alert(`Estoque total: ${estoqueTotal()} garrafas. Veja o resto no console (F12).`);
