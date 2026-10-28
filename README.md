@@ -1,8 +1,8 @@
 # 🍷 Vinheria Agnello - Checkpoint 03
 
-Sistema de controle de estoque de vinhos desenvolvido em **JavaScript puro**, com foco na manipulação de **objetos**, **arrays** e **funções de alta ordem**.
+Sistema de controle de estoque de vinhos desenvolvido em **JavaScript**, com foco na manipulação de **objetos**, **arrays** e **funções de alta ordem**.
 
-🔗 **Acesse o projeto:** [GitHub Pages](https://SEU-USUARIO.github.io/vinheria-agnello-checkpoint03/)
+🔗 **Acesse o projeto:** [https://natyqueiroz.github.io/vinheria-agnello-checkpoint03/](https://natyqueiroz.github.io/vinheria-agnello-checkpoint03/)
 
 ---
 
@@ -25,13 +25,14 @@ Os vinhos são cadastrados por meio de janelas `prompt()` e armazenados em um **
 | `safra` | número | 2018 |
 | `estoque` | número | 12 |
 
-Todas as interações acontecem via `prompt()`, `alert()` e `console.log()`, sem formulários e sem manipulação do DOM, conforme solicitado na atividade.
+Todas as interações acontecem via `prompt()`, `confirm()`, `alert()` e `console.log()`, sem formulários e sem manipulação do DOM, conforme solicitado na atividade.
 
 ---
 
 ## ⚙️ Funcionalidades
 
-- **Cadastro de vinhos** com validação de campos vazios e de tipo (aceita apenas tinto, branco ou rosé)
+- **Cadastro de vinhos** com validação de campos vazios, de tipo (apenas tinto, branco ou rosé) e de valores numéricos
+- **Cadastro contínuo**: após cada vinho, o sistema pergunta se deseja cadastrar outro
 - **Listagem completa** dos vinhos com `forEach`
 - **Vinhos com estoque baixo** (abaixo de 5 unidades) com `filter`
 - **Estoque total** da vinícola com `reduce`
@@ -44,18 +45,19 @@ Todas as interações acontecem via `prompt()`, `alert()` e `console.log()`, sem
 - Arrays de objetos
 - Funções reutilizáveis
 - Funções de alta ordem: `forEach`, `filter`, `map` e `reduce`
-- Estruturas de repetição (`while`) para validação de entradas
-- Conversão de tipos com `Number()`
-- Métodos de string: `toLowerCase()` e `toUpperCase()`
-- Método de array: `push()` e `includes()`
+- Estruturas de repetição `while` e `do...while`
+- Conversão de texto para número com `parseInt()`
+- Métodos de string: `trim()`, `toLowerCase()` e `toUpperCase()`
+- Métodos de array: `push()` e `includes()`
 
 ---
 
 ## ▶️ Como usar
 
-1. Acesse o link do GitHub Pages
+1. Acesse o [link do projeto](https://natyqueiroz.github.io/vinheria-agnello-checkpoint03/)
 2. Preencha os dados do vinho nas janelas que aparecerem
-3. Pressione **F12** e abra a aba **Console** para ver os relatórios
+3. Escolha se deseja cadastrar outro vinho
+4. Pressione **F12** e abra a aba **Console** para ver os relatórios
 
 ---
 
@@ -71,7 +73,9 @@ vinheria-agnello-checkpoint03/
     ├── css/
     │   └── style.css
     ├── js/
-        └── script.js
+    │   └── script.js
+    └── assets/
+        └── imgs/
 ```
 
 ---
